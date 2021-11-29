@@ -19,12 +19,20 @@ public class FP01_03Exercise {
         Exercise 4
         Print Courses Whose Name has atleast 4 letters
 
+        Exercise 5
+        Print the cubes of odd numbers
+
+        Exercise 6
+        Print the number of characters in each course name
+
      */
     public static void main(String[] args) {
-        PrintOddNumbers( List.of(12, 9, 13, 4, 6, 2, 4, 12, 15) );
-        PrintAllStr( List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes") );
-        PrintSpringWord( List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes") );
-        PrintMoreThan4Letters( List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes") );
+//        PrintOddNumbers( List.of(12, 9, 13, 4, 6, 2, 4, 12, 15) );
+//        PrintAllStr( List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes") );
+//        PrintSpringWord( List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes") );
+//        PrintMoreThan4Letters( List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes") );
+//        PrintCubesOfOddNumbers( List.of(12, 9, 13, 4, 6, 2, 4, 12, 15) );
+        PrintNumberOfCharacters( List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes") );
     }
 
     /*
@@ -65,5 +73,26 @@ public class FP01_03Exercise {
                 .filter(s -> s.length() >= 4)
                 .forEach(System.out::println);
     }
+
+    /*
+        Exercise 5
+        Print the cubes of odd numbers
+     */
+    public static void PrintCubesOfOddNumbers(List<Integer> numbers) {
+        numbers.stream()
+                .map(number -> number * number * number)
+                .forEach(System.out::println);
+    }
+
+    /*
+        Exercise 6
+        Print the number of characters in each course name
+     */
+    public static void PrintNumberOfCharacters(List<String> str) {
+        str.stream()
+                .map( s -> s + " " + s.length() )
+                .forEach( System.out::println );
+    }
+
 
 }
